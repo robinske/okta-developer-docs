@@ -2,7 +2,7 @@
   <section class="workforce">
     <div class="wrapper">
       <h2 class="workforce__title dont-break-out">
-        Start your Workforce Identity journey
+        Test Preview Start your Workforce Identity journey
       </h2>
       <p class="workforce__text dont-break-out">
         Welcome! Start with <strong>Learn</strong> if you’re new to Workforce Identity Cloud, or find the step in your journey and follow the links to browse docs.
@@ -27,12 +27,12 @@
           >
             <div class="workforce__block-wrapper">
               <h4 class="workforce__block-title dont-break-out">
-                <img 
-                  class="workforce__block-img workforce__block-img-light" 
+                <img
+                  class="workforce__block-img workforce__block-img-light"
                   :src="block.src"
                 >
-                <img 
-                  class="workforce__block-img workforce__block-img-dark" 
+                <img
+                  class="workforce__block-img workforce__block-img-dark"
                   :src="block.src_dark"
                 >
                 {{ block.title }}
