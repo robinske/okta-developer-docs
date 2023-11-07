@@ -23,8 +23,19 @@ const guideInfo = {};
 
 // Load frontmatter yaml to JS from root file index page
 const allGuidesMeta = getMetaFor(GUIDE_ROOT);
+
+// console.log(JSON.stringify(allGuidesMeta));
+
 // Iterate over the known universe of guides from previous step
 allGuidesMeta.guides.forEach( guide => {
+  return;
+  if (guide !== 'manage-orgs-okta-aerial') {
+    console.log('skipped: ', guide);
+    // return;
+  }
+
+  console.log(guide);
+
   // Load frontmatter yaml to JS from _those_ guides index pages
   const guideMeta = getMetaFor(`${GUIDE_ROOT}/${guide}`);
   guideMeta.guide = guide;
