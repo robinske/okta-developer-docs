@@ -690,7 +690,8 @@ export default {
         const { status, data } = err.response;
 
         switch (status) {
-          case 400: {
+          case 400:
+          case 403: {
             if (data.errorCauses && data.errorCauses.length) {
               this.error = data.errorCauses[0].errorSummary;
             }
