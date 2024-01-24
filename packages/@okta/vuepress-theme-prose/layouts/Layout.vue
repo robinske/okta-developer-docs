@@ -1,16 +1,21 @@
 <template>
   <div class="layout">
     <div class="fixed-header">
+      // here banner will be fixed because of header CSS and it will offset the Header and HeaderNav automatically
+      // In the banner component we will need to get HeaderNav.bottom and adjust page-body position reducing manipulations with DOM
+      <Banner :isDismissable=false type="warning" :isGlobal=true> // I hope we won't need id. isDismissible and isGloabl maybe too much freedom :)
+        <template v-slot:description>
+          Put your banner description here!
+        </template>
+      </Banner>
       <Header />
+      <HeaderNav />  //remove fixed position from css and top:87. The nav header should be in place automatically
     </div>
     <div
       :class="{
         'page-body': true,
       }"
     >
-      <HeaderNav />
-
-
       <div
         v-if="$page.frontmatter.component"
         class="content"
@@ -97,6 +102,7 @@ import SidebarItems from "../mixins/SidebarItems";
 export const endingSlashRE = /\/$/;
 export default {
   components: {
+    Banner: () => import("../components/Banner.vue"),
     Header: () => import("../components/Header.vue"),
     HeaderNav: () => import("../components/HeaderNav.vue"),
     Sidebar: () => import("../components/Sidebar.vue"),
