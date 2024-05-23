@@ -73,7 +73,7 @@ jobs:
 
   netlify_manual:
     docker:
-      - image: cimg/node:16.14.0
+      - image: cimg/node:14.21.3-browsers
     resource_class: xlarge
     steps:
       - run:
@@ -95,7 +95,7 @@ jobs:
       - run:
           name: Install Netlify CLI
           command: |
-            sudo npm install netlify-cli@15.10.0 -g
+            npm install netlify-cli@17.23.5 -g
       - run:
           name: Deploy preview to Netlify
           command: |
